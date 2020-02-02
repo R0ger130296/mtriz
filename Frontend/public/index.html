@@ -1,11 +1,166 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Matriz</title>
+    <link rel="icon" type="image/png" href="./assets/yavirac.png" />
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <title>MATRIZ</title>
 </head>
-<body>
-    
+
+<body class="bg-white">
+    <nav class="shadow-md">
+        <div class="mx-20 relative">
+            <div class="m-auto flex justify-between">
+                <div class="inline-flex py-2">
+                    <a href="#" class="no-underline cursor-pointer">
+                        <img class="h-16" src="./assets/yavirac.png" alt="">
+                    </a>
+                </div>
+                <div class="my-auto">
+                    <ul class="text-sm flex items-center px-6 h-12">
+                        <li><img class="w-6 ml-16" src="./assets/login.png"></li>
+                        <a href="#">
+                            <li class="ml-2">Ingresar</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <ul class="list-reset flex border-b">
+                <li class="-mb-px mr-1">
+                    <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold"
+                        href="#">Ver</a>
+                </li>
+                <li class="mr-1">
+                    <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold"
+                        href="#">Animar</a>
+                </li>
+                <li class="mr-1">
+                    <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold"
+                        href="#">+</a>
+                </li>
+                <li class="mr-1">
+                    <a class="bg-white inline-block py-2 px-4 text-grey-light font-semibold" href="#">↑</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="text-gray-900 mb-10">
+
+        <div class="flex justify-center">
+            <table class="w-full text-md bg-white shadow-md rounded mb-4">
+                <tbody>
+                    <tr class="border-b">
+                        <th class="text-left p-3 px-5">Nombre Estudiante</th>
+                        <th class="text-left p-3 px-5">Primer Parcial</th>
+                    </tr>
+                    <tr class="border-b hover:bg-orange-100 bg-gray-100">
+                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
+                        <td class="p-3 px-5">
+                            <div class="flex-1">
+                                <input type="text" value="Nota 1" class="bg-transparent">
+                                <input type="text" value="Nota 2" class="bg-transparent">
+                                <input type="text" value="Nota 3" class="bg-transparent">
+                                <input type="text" value="Nota 4" class="bg-transparent">
+                                <input type="text" value="Nota 5" class="bg-transparent">
+                                <input type="text" value="Nota 6" class="bg-transparent">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="border-b hover:bg-orange-100">
+                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
+                        <td class="p-3 px-5">
+                            <div class="flex-1">
+                                <input type="text" value="Nota 1" class="bg-transparent">
+                                <input type="text" value="Nota 2" class="bg-transparent">
+                                <input type="text" value="Nota 3" class="bg-transparent">
+                                <input type="text" value="Nota 4" class="bg-transparent">
+                                <input type="text" value="Nota 5" class="bg-transparent">
+                                <input type="text" value="Nota 6" class="bg-transparent">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="border-b hover:bg-orange-100 bg-gray-100">
+                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
+                        <td class="p-3 px-5">
+                            <div class="flex-1">
+                                <input type="text" value="Nota 1" class="bg-transparent">
+                                <input type="text" value="Nota 2" class="bg-transparent">
+                                <input type="text" value="Nota 3" class="bg-transparent">
+                                <input type="text" value="Nota 4" class="bg-transparent">
+                                <input type="text" value="Nota 5" class="bg-transparent">
+                                <input type="text" value="Nota 6" class="bg-transparent">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="border-b hover:bg-orange-100">
+                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
+                        <td class="p-3 px-5">
+                            <div class="flex-1">
+                                <input type="text" value="Nota 1" class="bg-transparent">
+                                <input type="text" value="Nota 2" class="bg-transparent">
+                                <input type="text" value="Nota 3" class="bg-transparent">
+                                <input type="text" value="Nota 4" class="bg-transparent">
+                                <input type="text" value="Nota 5" class="bg-transparent">
+                                <input type="text" value="Nota 6" class="bg-transparent">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="border-b hover:bg-orange-100 bg-gray-100">
+                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
+                        <td class="p-3 px-5">
+                            <div class="flex-1">
+                                <input type="text" value="Nota 1" class="bg-transparent">
+                                <input type="text" value="Nota 2" class="bg-transparent">
+                                <input type="text" value="Nota 3" class="bg-transparent">
+                                <input type="text" value="Nota 4" class="bg-transparent">
+                                <input type="text" value="Nota 5" class="bg-transparent">
+                                <input type="text" value="Nota 6" class="bg-transparent">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="border-b hover:bg-orange-100">
+                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
+                        <td class="p-3 px-5">
+                            <div class="flex-1">
+                                <input type="text" value="Nota 1" class="bg-transparent">
+                                <input type="text" value="Nota 2" class="bg-transparent">
+                                <input type="text" value="Nota 3" class="bg-transparent">
+                                <input type="text" value="Nota 4" class="bg-transparent">
+                                <input type="text" value="Nota 5" class="bg-transparent">
+                                <input type="text" value="Nota 6" class="bg-transparent">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="border-b bg-gray-100">
+                        <th class="text-left p-3 px-5">Media</th>
+                        <td class="p-3 px-5">Valor</td>
+                    </tr>
+                    <tr class="border-b bg-gray-100">
+                        <th class="text-left p-3 px-5">Mediana</th>
+                        <td class="p-3 px-5">Valor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <button class='bg-blue-500 text-white p-2 rounded text-base font-bold'>Modal Gráfico</button>
+        </div>
+    </div>
+
 </body>
+
 </html>
