@@ -42,15 +42,15 @@
   <div class="text-gray-900 mb-10">
   
     <div class="flex justify-center">
-        <table class="w-full text-md bg-white shadow-md rounded mb-4">
-            <tbody id="tabla">
-                <tr class="border-b">
+        <table  class="w-full text-md bg-white shadow-md rounded mb-4">
+            <tbody  id="tabla">
+                <tr  class="border-b">
                     <th class="text-left p-3 px-5">Nombre Estudiante</th>
                     <th class="text-left p-3 px-5">Primer Parcial</th>
                 </tr>
   
-                <tr class="border-b hover:bg-orange-100">
-                    <td class="p-3 px-5"><input  type="text" class="bg-transparent"></td>
+                <tr *ngFor="let item of respuesta" class="border-b hover:bg-orange-100">
+                    <td class="p-3 px-5"><input  type="text" class="bg-transparent">{{item.nombre}}</td>
                     <td class="p-3 px-5">
                         <div onload="getNotas()" class="flex-1">
                             <input type="text" value="Nota 1" class="bg-transparent">
@@ -62,8 +62,8 @@
                         </div>
                     </td>
                 </tr>
-  
-                <tr class="border-b bg-gray-100">
+            </tbody>
+             <tr class="border-b bg-gray-100">
                     <th class="text-left p-3 px-5">Media</th>
                     <td class="p-3 px-5">Valor</td>
                 </tr>
@@ -71,7 +71,6 @@
                     <th class="text-left p-3 px-5">Mediana</th>
                     <td class="p-3 px-5">Valor</td>
                 </tr>
-            </tbody>
         </table>
     </div>
     <div>
