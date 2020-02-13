@@ -5,6 +5,9 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { VistasComponent } from './vistas/vistas.component';
+import { FormularioAlumnoComponent } from './formulario-alumno/formulario-alumno.component';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +15,9 @@ import { VistasComponent } from './vistas/vistas.component';
     LoginComponent,
     NotFoundComponent,
     VistasComponent,
+    FormularioAlumnoComponent,
+    HeaderComponent,
+    SidebarComponent,
     
   ],
   imports: [
