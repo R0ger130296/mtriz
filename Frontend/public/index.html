@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./build/tailwind.css">
     <title>MATRIZ</title>
 </head>
-
-<body class="bg-white">
+<script src="./js/alumno.js"></script>
+<body onload="getData()" class="bg-white">
     <nav class="shadow-md">
         <div class="mx-20 relative">
             <div class="m-auto flex justify-between">
@@ -56,85 +56,16 @@
 
         <div class="flex justify-center">
             <table class="w-full text-md bg-white shadow-md rounded mb-4">
-                <tbody>
+                <tbody id="tabla">
                     <tr class="border-b">
                         <th class="text-left p-3 px-5">Nombre Estudiante</th>
                         <th class="text-left p-3 px-5">Primer Parcial</th>
                     </tr>
-                    <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
-                        <td class="p-3 px-5">
-                            <div class="flex-1">
-                                <input type="text" value="Nota 1" class="bg-transparent">
-                                <input type="text" value="Nota 2" class="bg-transparent">
-                                <input type="text" value="Nota 3" class="bg-transparent">
-                                <input type="text" value="Nota 4" class="bg-transparent">
-                                <input type="text" value="Nota 5" class="bg-transparent">
-                                <input type="text" value="Nota 6" class="bg-transparent">
-                            </div>
-                        </td>
-                    </tr>
 
                     <tr class="border-b hover:bg-orange-100">
-                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
+                        <td class="p-3 px-5"><input  type="text" class="bg-transparent"></td>
                         <td class="p-3 px-5">
-                            <div class="flex-1">
-                                <input type="text" value="Nota 1" class="bg-transparent">
-                                <input type="text" value="Nota 2" class="bg-transparent">
-                                <input type="text" value="Nota 3" class="bg-transparent">
-                                <input type="text" value="Nota 4" class="bg-transparent">
-                                <input type="text" value="Nota 5" class="bg-transparent">
-                                <input type="text" value="Nota 6" class="bg-transparent">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
-                        <td class="p-3 px-5">
-                            <div class="flex-1">
-                                <input type="text" value="Nota 1" class="bg-transparent">
-                                <input type="text" value="Nota 2" class="bg-transparent">
-                                <input type="text" value="Nota 3" class="bg-transparent">
-                                <input type="text" value="Nota 4" class="bg-transparent">
-                                <input type="text" value="Nota 5" class="bg-transparent">
-                                <input type="text" value="Nota 6" class="bg-transparent">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-orange-100">
-                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
-                        <td class="p-3 px-5">
-                            <div class="flex-1">
-                                <input type="text" value="Nota 1" class="bg-transparent">
-                                <input type="text" value="Nota 2" class="bg-transparent">
-                                <input type="text" value="Nota 3" class="bg-transparent">
-                                <input type="text" value="Nota 4" class="bg-transparent">
-                                <input type="text" value="Nota 5" class="bg-transparent">
-                                <input type="text" value="Nota 6" class="bg-transparent">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
-                        <td class="p-3 px-5">
-                            <div class="flex-1">
-                                <input type="text" value="Nota 1" class="bg-transparent">
-                                <input type="text" value="Nota 2" class="bg-transparent">
-                                <input type="text" value="Nota 3" class="bg-transparent">
-                                <input type="text" value="Nota 4" class="bg-transparent">
-                                <input type="text" value="Nota 5" class="bg-transparent">
-                                <input type="text" value="Nota 6" class="bg-transparent">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-orange-100">
-                        <td class="p-3 px-5"><input type="text" value="Molina Jose" class="bg-transparent"></td>
-                        <td class="p-3 px-5">
-                            <div class="flex-1">
+                            <div onload="getNotas()" class="flex-1">
                                 <input type="text" value="Nota 1" class="bg-transparent">
                                 <input type="text" value="Nota 2" class="bg-transparent">
                                 <input type="text" value="Nota 3" class="bg-transparent">

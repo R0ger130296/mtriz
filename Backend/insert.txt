@@ -1,0 +1,4 @@
+insert into rol values(1,'Administrador');
+insert into rol values(2,'Alumno');
+insert into persona values(1,'admin','1723603997','0990475612','grarogccee@gmail.com','1234',1);
+insert into persona values(2,'alumno','1723603997','0990475612','alumno@gmail.com','12345',2);
