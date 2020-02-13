@@ -14,6 +14,7 @@ export class VistasComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    this.getDataNotas();
   }
 
   respuesta: any[]
@@ -21,11 +22,28 @@ export class VistasComponent implements OnInit {
   getData = () => {
     let tabla = 'persona'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-        .subscribe(data => {
-            this.respuesta = data.datos
-            console.log(this.respuesta)
-        })
+      .subscribe(data => {
+        this.respuesta = data.datos
+      })
+  }
+  respuestaNotas: any[]
+  getDataNotas = () => {
+    let tabla = 'nota'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+      .subscribe(data => {
+        this.respuestaNotas = data.datos
+        console.log(this.respuestaNotas)
+      })
   }
 
+  // postDataTable = () => {
+  //   let tabla = 'ordenes'
+  //   let register = {tabla: tabla, datos: [{id: this.id, fecha_orden: this.fecha_orden, idclientes: this.idclientes}]}
+  //   this.http.post(environment.API_URL, register)
+  //   .subscribe( data => {
+  //     // this.postData = data
+  //   })
+  //   window.location.reload()
+  // }
 }
 
