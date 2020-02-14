@@ -3,22 +3,22 @@
         <h1 class="font-medium mb-6 text-center text-3xl">Matriz Estadística</h1>
         <div class="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg">
             <div class="mb-4">
-                <label id="persona_email" class="font-bold text-grey-darker block mb-2">Correo Electrónico</label>
-                <input type="email"
+                <label  class="font-bold text-grey-darker block mb-2">Correo Electrónico</label>
+                <input #persona_email type="email"
                     class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
-                    placeholder="Correo electrónico">
+                    placeholder="Correo electrónico"/>
             </div>
 
             <div class="mb-4">
-                <label id="persona_clave" class="font-bold text-grey-darker block mb-2">Contraseña</label>
-                <input type="text"
+                <label class="font-bold text-grey-darker block mb-2">Contraseña</label>
+                <input  #persona_clave type="text"
                     class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
-                    placeholder="Contraseña">
+                    placeholder="Contraseña"/>
             </div>
 
             <div class="flex items-center justify-between">
                 <a ><button
-                        class="bg-blue-500 hover:bg-teal text-white font-bold py-2 px-4 rounded">
+                      (click)="login()"  class="bg-blue-500 hover:bg-teal text-white font-bold py-2 px-4 rounded">
                         Ingresar
                     </button></a>
             </div>

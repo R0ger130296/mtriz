@@ -21,7 +21,7 @@ export class VistasComponent implements OnInit {
 
   getData = () => {
     let tabla = 'persona'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+    this.http.get<any>(environment.API_URL+`/matriz` + `?tabla=${tabla}`)
       .subscribe(data => {
         this.respuesta = data.datos
       })
@@ -29,7 +29,7 @@ export class VistasComponent implements OnInit {
   respuestaNotas: any[]
   getDataNotas = () => {
     let tabla = 'nota'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+    this.http.get<any>(environment.API_URL+`/matriz` + `?tabla=${tabla}`)
       .subscribe(data => {
         this.respuestaNotas = data.datos
         console.log(this.respuestaNotas)
