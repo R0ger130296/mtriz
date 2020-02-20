@@ -28,7 +28,8 @@
                     href="#">Animar</a>
             </li>
             <li class="mr-1">
-                <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold" href="#">+</a>
+                <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold"
+                    href="#">+</a>
             </li>
             <li class="mr-1">
                 <a class="bg-white inline-block py-2 px-4 text-grey-light font-semibold" href="#">↑</a>
@@ -38,41 +39,58 @@
 
 </nav>
 
-<div class="text-gray-900 mb-10">
-
-    <div class="flex justify-center">
+<div class="flex">
+    <div class="text-gray-900 mb-10 w-1/2">
         <table class="w-full text-md bg-white shadow-md rounded mb-4">
-            <tbody id="tabla">
-                <tr class="border-b">
-                    <th class="text-left p-3 px-5">Nombre Estudiante</th>
-                    <th class="text-left p-3 px-5">Primer Parcial</th>
-                </tr>
-
-                <tr *ngFor="let item of respuesta" class="border-b hover:bg-orange-100">
-                    <td class="p-3 px-5"><input type="text" class="bg-transparent">{{item.nombre}}</td>
-                    <td class="p-3 px-5">
-                        <div onload="getNotas()" class="flex-1">
-                            <input type="text" value="Nota 1" class="bg-transparent">
-                            <input type="text" value="Nota 2" class="bg-transparent">
-                            <input type="text" value="Nota 3" class="bg-transparent">
-                            <input type="text" value="Nota 4" class="bg-transparent">
-                            <input type="text" value="Nota 5" class="bg-transparent">
-                            <input type="text" value="Nota 6" class="bg-transparent">
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
+            <tr class="border-b">
+                <th class="text-left p-3">Nombre Estudiante</th>
+                <th class="text-left p-3">Cédula</th>
+                <th class="text-left p-3">Teléfono</th>
+                <th class="text-left p-3">Correo</th>
+                <th class="text-left p-3">Matrícula</th>
+                <th class="text-left p-3">Malla</th>
+                <th class="text-left p-3">Asistencia</th>
+            </tr>
+            <tr class="border-b hover:bg-orange-100 bg-gray-100">
+                <td *ngFor="let item of respuesta" class="p-3">{{item.nombre}}</td>
+                <td *ngFor="let item of respuesta" class="p-3">{{item.identificacion}}</td>
+                <td *ngFor="let item of respuesta" class="p-3">{{item.telf}}</td>
+                <td *ngFor="let item of respuesta" class="p-3">{{item.correo}}</td>
+            </tr>
             <tr class="border-b bg-gray-100">
-                <th class="text-left p-3 px-5">Media</th>
+                <th class="text-left p-3">Media</th>
                 <td class="p-3 px-5">Valor</td>
             </tr>
             <tr class="border-b bg-gray-100">
-                <th class="text-left p-3 px-5">Mediana</th>
+                <th class="text-left p-3">Mediana</th>
                 <td class="p-3 px-5">Valor</td>
             </tr>
         </table>
     </div>
-    <div>
-        <button class='bg-blue-500 text-white p-2 rounded text-base font-bold'>Modal Gráfico</button>
+
+    <div class="overflow-x-scroll w-1/2">
+        <table class="text-md bg-white shadow-md rounded mb-4">
+            <thead class="bg-black text-black w-full">
+                <tr class="border-b">
+                    <th class="text-left bg-blue-200 py-3">Parcial Uno</th>
+                </tr>
+            </thead>
+
+            <tbody  class="">
+                <tr class="flex w-full mb-4">
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                    <td><input type="text" class="bg-transparent"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
 </div>

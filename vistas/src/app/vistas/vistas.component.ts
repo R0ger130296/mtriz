@@ -21,9 +21,10 @@ export class VistasComponent implements OnInit {
 
   getData = () => {
     let tabla = 'persona'
-    this.http.get<any>(environment.API_URL+`/matriz` + `?tabla=${tabla}`)
+    this.http.get<any>(environment.API_URL+`/matrizWhere` + `?tabla=${tabla}`+'&&where=2')
       .subscribe(data => {
         this.respuesta = data.datos
+        console.log(this.respuesta)
       })
   }
   respuestaNotas: any[]
