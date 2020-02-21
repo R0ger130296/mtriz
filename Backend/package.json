@@ -10,6 +10,7 @@
   "author": "Roger Cedeño",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "express": "^4.17.1",

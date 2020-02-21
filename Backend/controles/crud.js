@@ -131,15 +131,15 @@ let getDatosbyID = (req, res) => {
 
 let login = (req,res) =>{
   let tabla = 'persona';
-  let email = req.body.email;
+  let correo = req.body.correo;
   let clave = req.body.clave;
-  let campo = req.query.campo;
+  let campo = req.body.campo;
 
   db.select(campo)
     .from(tabla)
     .then(resultado => {
       resultado.forEach(element => {
-        if(element.correo === email && element.clave === clave){
+        if(element.correo === correo && element.clave === clave){
           res.status(200).json({
             ok: true,
             mensaje: "loggeded"

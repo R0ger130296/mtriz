@@ -1,12 +1,16 @@
 const express = require("express"),
   bodyParser = require("body-parser"),
+  cors=require("cors")
   PORT = 8000;
 
 let app = express(),
   rutas = require("../rutas/ruta");
 
+  app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
