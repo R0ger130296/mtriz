@@ -6,14 +6,31 @@ select * from materia
 select * from carrera
 select * from asistencia
 select * from nota
-select * from parcial
-select * from persona
+select * f values(1,'admin','1723603997','0990475612','grarogccee@gmail.com','1234',1);
+
+insert into persona values(1,'admin','1755362827','0979427280','admin@gmail.com','1234',1);
+insert into persona values (2,'AGUIRRE FLORES GEOVANNY GABRIEL','1714305260','991321426','gga.flores@yavirac.edu.ec','',2);
+insert into persona values (3,'CAJILEMA CUJI ARMANDO TELMO','1736870660','985344539','atc.cuji@yavirac.edu.ec','',2);
+insert into persona values (4,'CONYA GAVILANEZ WILLIAN MANOLO','1728227687','986389699','wmc.gavilanez@yavirac.edu.ec','',2);
+insert into persona values (5,'HOLGUIN MUNOZ KEVIN JORDAN','1802691932','968148869','kjh.munoz@yavirac.edu.ec','',2);
+insert into persona values (6,'JÁCOME TERAN RODNEY XAVIER','1717277818','981819632','rxj.teran@yavirac.edu.ec','',2);
+insert into persona values (7,'JARAMILLO ATAHUALPA JULIO FABRICIO','1919250052','988735451','jfj.atahualpa@yavirac.edu.ec','',2);
+insert into persona values (8,'MEJIA ARIAS ALEXANDER PATRICIO','1757050215','984419970','apm.arias@yavirac.edu.ec','',2);
+insert into persona values (9,'MORAN BRIONES CHRISTIAN BLADIMIR','1784215026','939861565','cbm.briones@yavirac.edu.ec','',2);
+insert into persona values (10,'OBANDO MALDONADO JOSE RODOLFO','1718052385','976493314','jro.maldonado@yavirac.edu.ec','',2);
+insert into persona values (11,'ORTIZ ZUÑIGA ANGIE JOSETH','1217349316','979838919','ajo.zuniga@yavirac.edu.ec','',2);
+insert into persona values (12,'POZO SANCHEZ ROGER ELIAS','1522080969','924132298','rep.sanchez@yavirac.edu.ec','',2);
+insert into persona values (13,'QUISHPE JIMENEZ WENDY JACQUELINE','1750159896','984492771','wjq.jimenez@yavirac.edu.ec','',2);
+insert into persona values (14,'RECALDE GÓMEZ SANTIAGO DANIEL','1726894316','989358810','sdr.gomez@yavirac.edu.ec','',2);
+insert into persona values (15,'REYES LIGÑA HOLGER DAVID','1722153999','999720977','hdr.ligna@yavirac.edu.ec','',2);
+insert into persona values (16,'RUIZ DIAZ CARLOS JAVIER','1723194965','975719473','cjr.diaz@yavirac.edu.ec','',2);
+insert into persona values (17,'TIPAN TIBANTA KAREN VANESSA','1252686712','987166354','kvt.tibanta@yavirac.edu.ec','',2);
 
 insert into rol values(1,'Administrador');
 insert into rol values(2,'Alumno');
-insert into persona values(1,'admin','1723603997','0990475612','grarogccee@gmail.com','1234',1);
-insert into persona values(2,'alumno','1723603997','0990475612','alumno@gmail.com','12345',2);
-insert into nota values(1, 100,100,100,100,100);
+
+insert into nota values(1, 100,100,100,100,100,1,1);
+
 insert into asistencia values(1,'100%');
 insert into materia values (1, 'Estadística');
 insert into malla values (1, 'antigua');
@@ -22,12 +39,8 @@ insert into semestre values (1, 'cuarto', 1);
 insert into semestre_malla values (1, 1, 1);
 
 insert into matricula values (1, 'primera', 1, 1, 1);
-insert into parcial values(1,'primero',1,1,1);
-insert into parcial values(2,'segundo',1,1,1);
-
-
-insert into persona values(2,'alumno','1723603997','0990475612','alumno@gmail.com','12345',2);
-
+insert into parcial values(1,'primero',1);
+insert into parcial values(2,'segundo',1);
 
 
 select persona.id, persona.nombre as estudiante, persona.identificacion, persona.telf, persona.correo, 

@@ -164,9 +164,11 @@ let getDatosAlumno = (req, res) => {
   // let idmatricula = req.query.idmatricula;
   db.raw(
     `select persona.id, persona.nombre as estudiante, persona.identificacion, persona.telf, persona.correo, 
-    matricula.nombre as est_matricula, malla.nombre as est_malla, asistencia.porcentaje from persona join matricula on persona.id = matricula.id_persona
+    matricula.nombre as matricula, malla.nombre as malla, asistencia.porcentaje from persona 
+    join matricula on persona.id = matricula.id_persona
     join semestre_malla on semestre_malla.id = matricula.id_semestre_malla join malla
-    on malla.id = semestre_malla.id_malla join parcial on matricula.id = parcial.id_matricula
+    on malla.id = semestre_malla.id_malla join nota on matricula.id = nota.idmatricula 
+    join parcial on nota.idparcial=parcial.id
     join asistencia on asistencia.id = parcial.id_asistencia;`
   )
     .then(resultado => {
@@ -188,11 +190,9 @@ let getDatosAlumno = (req, res) => {
 let getNotasAlumno = (req, res) => {
   // let idmatricula = req.query.idmatricula;
   db.raw(
-    `select persona.nombre, nota.investigacion, nota.vinculacion, nota.trabajo_practico, nota.evaluacion_final,
-    nota.examen from persona join matricula on persona.id = matricula.id_persona join semestre_malla 
-    on semestre_malla.id = matricula.id_semestre_malla join malla
-    on malla.id = semestre_malla.id_malla join parcial on matricula.id = parcial.id_matricula
-    join asistencia on asistencia.id = parcial.id_asistencia join nota on nota.id = parcial.id_nota where parcial.id=1;`
+    `select persona.nombre as estudiante, nota.investigacion as investigacion, nota.vinculacion as vinculacion,nota.trabajo_practico as trabajo_practico, nota.evaluacion_final as nota_final,
+    nota.examen as examen from persona join matricula on persona.id = matricula.id_persona
+    join nota on matricula.id=nota.idmatricula join parcial on parcial.id=nota.idparcial where parcial.id=1;`
   )
     .then(resultado => {
       return res.status(200).json({

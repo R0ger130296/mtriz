@@ -3,13 +3,13 @@ let api = express.Router(),
   control = require("../controles/crud");
 
 api.get("/matriz", control.getDatos);
-api.post("/matriz", control.postDatos);
+api.post("/matrizPost", control.postDatos);
 api.get("/matrizWhere", control.getDatosWhere);
 api.put("/matriz", control.updateDatos);
 api.delete("/matriz", control.deleteDatos);
 api.get("/matrizById", control.getDatosbyID);
 api.post("/login", control.login);
-api.get("/all", control.getDatosAlumno);
-api.get("/allNotas",control.getNotasAlumno);
+api.get("/alumno", control.getDatosAlumno);
+api.get("/notas",control.getNotasAlumno);
 
 module.exports = api;

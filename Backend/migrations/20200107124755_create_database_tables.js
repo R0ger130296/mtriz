@@ -25,22 +25,13 @@ exports.up = function(knex, Promise) {
       table.string("nombre");
     })
 
-    .createTable("nota",function(table){
-      table.increments("id");
-      table.integer("investigacion");
-      table.integer("vinculacion");
-      table.integer("trabajo_practico");
-      table.integer("evaluacion_final");
-      table.integer("examen");
-    })
-
     .createTable("persona", function(table) {
       table.increments("id");
       table.string("nombre");
       table.string("identificacion");
       table.string("telf");
       table.string("correo");
-      table.string("clave").unique();
+      table.string("clave");
       table.integer("id_rol").references("id").inTable("rol");
     })
 
@@ -67,9 +58,18 @@ exports.up = function(knex, Promise) {
     .createTable("parcial",function(table){
       table.increments("id");
       table.string("nombre");
-      table.integer("id_nota").references("id").inTable("nota");
-      table.integer("id_matricula").references("id").inTable("matricula");
       table.integer("id_asistencia").references("id").inTable("asistencia");
+    })
+
+    .createTable("nota",function(table){
+      table.increments("id");
+      table.integer("investigacion");
+      table.integer("vinculacion");
+      table.integer("trabajo_practico");
+      table.integer("evaluacion_final");
+      table.integer("examen");
+      table.integer("idmatricula").references("id").inTable("matricula");
+      table.integer("idparcial").references("id").inTable("parcial");
     })
 
 };
