@@ -192,7 +192,7 @@ let getNotasAlumno = (req, res) => {
     nota.examen from persona join matricula on persona.id = matricula.id_persona join semestre_malla 
     on semestre_malla.id = matricula.id_semestre_malla join malla
     on malla.id = semestre_malla.id_malla join parcial on matricula.id = parcial.id_matricula
-    join asistencia on asistencia.id = parcial.id_asistencia join nota on nota.id = parcial.id_nota;`
+    join asistencia on asistencia.id = parcial.id_asistencia join nota on nota.id = parcial.id_nota where parcial.id=1;`
   )
     .then(resultado => {
       return res.status(200).json({
