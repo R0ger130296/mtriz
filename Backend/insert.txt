@@ -6,7 +6,9 @@ select * from materia
 select * from carrera
 select * from asistencia
 select * from nota
-select * f values(1,'admin','1723603997','0990475612','grarogccee@gmail.com','1234',1);
+
+insert into rol values(1,'Administrador');
+insert into rol values(2,'Alumno');
 
 insert into persona values(1,'admin','1755362827','0979427280','admin@gmail.com','1234',1);
 insert into persona values (2,'AGUIRRE FLORES GEOVANNY GABRIEL','1714305260','991321426','gga.flores@yavirac.edu.ec','',2);
@@ -26,10 +28,6 @@ insert into persona values (15,'REYES LIGÑA HOLGER DAVID','1722153999','9997209
 insert into persona values (16,'RUIZ DIAZ CARLOS JAVIER','1723194965','975719473','cjr.diaz@yavirac.edu.ec','',2);
 insert into persona values (17,'TIPAN TIBANTA KAREN VANESSA','1252686712','987166354','kvt.tibanta@yavirac.edu.ec','',2);
 
-insert into rol values(1,'Administrador');
-insert into rol values(2,'Alumno');
-
-insert into nota values(1, 100,100,100,100,100,1,1);
 
 insert into asistencia values(1,'100%');
 insert into materia values (1, 'Estadística');
@@ -38,9 +36,65 @@ insert into carrera values (1, 'Desarrollo de software');
 insert into semestre values (1, 'cuarto', 1);
 insert into semestre_malla values (1, 1, 1);
 
+
 insert into matricula values (1, 'primera', 1, 1, 1);
 insert into parcial values(1,'primero',1);
 insert into parcial values(2,'segundo',1);
+
+insert into matricula values (2, 'segunda', 2, 1, 1);
+insert into matricula values (3, 'primera', 3, 1, 1);
+insert into matricula values (4, 'primera', 4, 1, 1);
+insert into matricula values (5, 'primera', 5, 1, 1);
+insert into matricula values (6, 'primera', 6, 1, 1);
+insert into matricula values (7, 'primera', 7, 1, 1);
+insert into matricula values (8, 'primera', 8, 1, 1);
+insert into matricula values (9, 'segunda', 9, 1, 1);
+insert into matricula values (10, 'primera', 10, 1, 1);
+insert into matricula values (11, 'primera', 11, 1, 1);
+insert into matricula values (12, 'primera', 12, 1, 1);
+insert into matricula values (13, 'primera', 13, 1, 1);
+insert into matricula values (14, 'primera', 14, 1, 1);
+insert into matricula values (15, 'segunda', 15, 1, 1);
+insert into matricula values (16, 'segunda', 16, 1, 1);
+insert into matricula values (17, 'primera', 17, 1, 1);
+
+******************************** PARCIAL 1 ********************************
+
+insert into nota values (2, 100, 100,  84,  70, 38, 2, 1);
+insert into nota values (3, 100, 100,  99, 100, 61, 3, 1);
+insert into nota values (4, 100, 100, 100,  85, 54, 4, 1);
+insert into nota values (5, 100, 100,  92,  88, 29, 5, 1);
+insert into nota values (6, 100, 100,  79,  86, 69, 6, 1);
+insert into nota values (7, 100, 100,  80,  85, 43, 7, 1);
+insert into nota values (8, 100, 100,  97,  85, 62, 8, 1);
+insert into nota values (9,   0, 100,  66,  45, 56, 9, 1);
+insert into nota values (10,100, 100, 100, 100, 68, 10, 1);
+insert into nota values (11,100, 100, 100,  65, 48, 11, 1);
+insert into nota values (12,100, 100,  98,  88, 75, 12, 1);
+insert into nota values (13,100, 100,  98,  98, 84, 13, 1);
+insert into nota values (14,100, 100,  99, 100,100, 14, 1);
+insert into nota values (15,100, 100,  92,  91, 68, 15, 1);
+insert into nota values (16,  0, 100,  77,  61, 38, 16, 1);
+insert into nota values (17,100, 100, 100, 100,100, 17, 1);
+
+******************************** PARCIAL 2 ********************************
+
+insert into nota values (18,  90, 100, 100,  77,100, 2, 2);
+insert into nota values (19, 100, 100, 100,  78,100, 3, 2);
+insert into nota values (20, 100, 100, 100,  80,100, 4, 2);
+insert into nota values (21, 100, 100,  88,  88, 90, 5, 2);
+insert into nota values (22,  90, 100,  88,  71, 90, 6, 2);
+insert into nota values (23, 100, 100, 100,  85,100, 7, 2);
+insert into nota values (24, 100, 100, 100,  75, 80, 8, 2);
+insert into nota values (25,  93, 100, 100,  57,100, 9, 2);
+insert into nota values (26,100, 100, 100,  99,100,10, 2);
+insert into nota values (27,100, 100, 100,  82,100,11, 2);
+insert into nota values (28,100, 100, 100,  95,100,12, 2);
+insert into nota values (29,100, 100, 100, 100, 90,13, 2);
+insert into nota values (30,100, 100, 100,  96, 80,14, 2);
+insert into nota values (31,100, 100,  50,  82, 90,15, 2);
+insert into nota values (32, 93, 100, 100,  78,100,16, 2);
+insert into nota values (33,100, 100, 100,  98,100,17, 2);
 
 
 select persona.id, persona.nombre as estudiante, persona.identificacion, persona.telf, persona.correo, 
