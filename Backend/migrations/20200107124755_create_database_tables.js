@@ -27,11 +27,11 @@ exports.up = function(knex, Promise) {
 
     .createTable("nota",function(table){
       table.increments("id");
-      table.string("investigacion");
-      table.string("vinculacion");
-      table.string("trabajo_practico");
-      table.string("evaluacion_final");
-      table.string("examen");
+      table.integer("investigacion");
+      table.integer("vinculacion");
+      table.integer("trabajo_practico");
+      table.integer("evaluacion_final");
+      table.integer("examen");
     })
 
     .createTable("persona", function(table) {
