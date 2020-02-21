@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
 const API = "http://localhost:8000/server/all";
 
@@ -7,22 +7,23 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        detalles: [],
-    }
-}
+      detalles: []
+    };
+  }
 
-componentDidMount() {
-    axios.get(API)
-    .then(response => {
-        this.setState({ detalles: response.data.datos })
-    })
-    .catch(error => {
-        console.log(error)
-    })
-}
+  componentDidMount() {
+    axios
+      .get(API)
+      .then(response => {
+        this.setState({ detalles: response.data.datos });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   render() {
-    const {detalles}=this.state;
+    const { detalles } = this.state;
     return (
       <div>
         <div className="flex bg-teal-500 p-6 justify-between">
@@ -66,8 +67,16 @@ componentDidMount() {
                 <th className="text-left p-3">Asistencia</th>
               </tr>
               <tr className="border-b hover:bg-orange-100 bg-gray-100">
-                {detalles.map(element=><td className="p-3"key={ element.id}>{element.id}</td>)}
-                {detalles.map(element=><td className="p-3"key={ element.id}>{element.estudiante}</td>)}
+                {detalles.map(element => (
+                  <td className="p-3" key={element.id}>
+                    {element.id}
+                  </td>
+                ))}
+                {detalles.map(element => (
+                  <td className="p-3" key={element.id}>
+                    {element.estudiante}
+                  </td>
+                ))}
                 <td className="p-3">Identificación</td>
                 <td className="p-3">Telefono</td>
                 <td className="p-3">Correo</td>
@@ -105,130 +114,40 @@ componentDidMount() {
             <thead className="bg-black text-black w-full">
               <tr className="border-b">
                 <th className="text-center bg-red-200 p-5">ID</th>
-                <th className="text-center bg-blue-200 py-3">
-                  Actividades de Vinculación
-                </th>
-                <th className="text-center bg-green-200 py-3">
-                  Trabajos Prácticos
-                </th>
+                <th className="text-center bg-blue-200 py-3">Investigación</th>
+                <th className="text-center bg-green-200 py-3">Vinculación</th>
                 <th className="text-center bg-yellow-200 py-3">
-                  Evaluación Escrita
+                  Trabajo Práctico
                 </th>
-                <th className="text-center bg-red-200 py-3">Examen Final</th>
+                <th className="text-center bg-red-200 py-3">
+                  Evaluación Final
+                </th>
+                <th className="text-center bg-blue-200 py-3">Examem</th>
               </tr>
             </thead>
 
             <tbody className="">
               <tr>
                 <td className="bg-red-200">
-                  <br></br>
                   <h5 className="ml-5">1</h5>
                 </td>
                 <td className="bg-blue-200">
-                  <div className="flex">
-                    <h5 className="p-1">Salidas / Convenciones</h5>
-                    <h5 className="p-1">Parametro de Evaluación</h5>
-                  </div>
-                  <div className="flex">
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                  </div>
+                  100
                 </td>
 
                 <td className="bg-green-200">
-                  <div className="flex">
-                    <h5 className="p-1">Conceptos Básicos</h5>
-                    <h5 className="p-1">Demostración Formular</h5>
-                    <h5 className="p-1">Gráfica de funciones y áreas</h5>
-                    <h5 className="p-1">Taller</h5>
-                    <h5 className="p-1">Promedio</h5>
-                    <h5 className="p-1">% Parametro de evaluación</h5>
-                  </div>
-                  <div className="flex">
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                  </div>
+                  100
                 </td>
 
                 <td className="bg-yellow-200">
-                  <div className="flex">
-                    <h5 className="p-1 mx-auto">Nota</h5>
-                    <h5 className="p-1 mx-auto">Promedio</h5>
-                    <h5 className="p-1 mx-auto">% Parametro de evaluación</h5>
-                  </div>
-                  <div className="flex">
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                  </div>
+                  100
                 </td>
 
                 <td className="bg-red-200">
-                  <div className="flex">
-                    <h5 className="p-1 mx-auto">Examen</h5>
-                    <h5 className="p-1 mx-auto">Recuperación</h5>
-                    <h5 className="p-1 mx-auto">Nota Final</h5>
-                  </div>
-                  <div className="flex">
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="SI / NO"
-                    />
-                    <input
-                      type="text"
-                      className="border px-1"
-                      placeholder="Nota"
-                    />
-                  </div>
+                  100
+                </td>
+                <td className="bg-blue-200">
+                  100
                 </td>
               </tr>
             </tbody>
