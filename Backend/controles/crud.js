@@ -183,6 +183,34 @@ let getDatosAlumno = (req, res) => {
       });
     });
 };
+
+
+let getNotasAlumno = (req, res) => {
+  // let idmatricula = req.query.idmatricula;
+  db.raw(
+    `select persona.id, nota.investigacion, nota.vinculacion, nota.trabajo_practico, nota.evaluacion_final,
+    nota.examen from persona join matricula on persona.id = matricula.id_persona join semestre_malla 
+    on semestre_malla.id = matricula.id_semestre_malla join malla
+    on malla.id = semestre_malla.id_malla join parcial on matricula.id = parcial.id_matricula
+    join asistencia on asistencia.id = parcial.id_asistencia join nota on nota.id = parcial.id_nota;`
+  )
+    .then(resultado => {
+      return res.status(200).json({
+        ok: true,
+        datos: resultado.rows
+      });
+    })
+    .catch(error => {
+      return res.status(500).json({
+        ok: false,
+        datos: null,
+        mensaje: `Error del servidor: ${error}`
+      });
+    });
+};
+
+
+
 module.exports = {
   getDatos,
   postDatos,
@@ -191,5 +219,6 @@ module.exports = {
   getDatosbyID,
   login,
   getDatosWhere,
-  getDatosAlumno
+  getDatosAlumno,
+  getNotasAlumno
 };

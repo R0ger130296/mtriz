@@ -10,5 +10,6 @@ api.delete("/matriz", control.deleteDatos);
 api.get("/matrizById", control.getDatosbyID);
 api.post("/login", control.login);
 api.get("/all", control.getDatosAlumno);
+api.get("/allNotas",control.getNotasAlumno);
 
 module.exports = api;

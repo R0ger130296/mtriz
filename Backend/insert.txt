@@ -20,17 +20,12 @@ insert into malla values (1, 'antigua');
 insert into carrera values (1, 'Desarrollo de software');
 insert into semestre values (1, 'cuarto', 1);
 insert into semestre_malla values (1, 1, 1);
-<<<<<<< HEAD
 
 insert into matricula values (1, 'primera', 2, 1, 1);
 
 insert into persona values(2,'alumno','1723603997','0990475612','alumno@gmail.com','12345',2);
 
 
-=======
-insert into matricula values (1, 'primera', 2, 1, 1);
-insert into parcial values(1, 'parcial 1', 1, 1, 1);
->>>>>>> d4a4185d357676d20a675c4b0da76a30e35c2119
 
 select persona.id, persona.nombre as estudiante, persona.identificacion, persona.telf, persona.correo, 
 matricula.nombre as est_matricula, malla.nombre as est_malla, asistencia.porcentaje from persona join matricula on persona.id = matricula.id_persona

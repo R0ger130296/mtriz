@@ -1,21 +1,30 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-const API = "http://localhost:8000/server/all";
+const API = "http://localhost:8000/server/";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      detalles: []
+      detalles: [],
+      notas:[]
     };
   }
 
   componentDidMount() {
     axios
-      .get(API)
+      .get(API+"all")
       .then(response => {
         this.setState({ detalles: response.data.datos });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+      axios
+      .get(API+"allNotas")
+      .then(response => {
+        this.setState({ notas: response.data.datos });
       })
       .catch(error => {
         console.log(error);
@@ -23,7 +32,8 @@ class Home extends Component {
   }
 
   render() {
-    const { detalles } = this.state;
+    const { detalles,
+    notas } = this.state;
     return (
       <div>
         <div className="flex bg-teal-500 p-6 justify-between">
@@ -121,26 +131,26 @@ class Home extends Component {
             <tbody className="">
               <tr>
                 <td className="bg-red-200">
-                  <h5 className="ml-5">1</h5>
+                 {notas.map(element=><h5 className="ml-5">{element.id}</h5>)}
                 </td>
-                <td className="bg-blue-200">
-                  100
-                </td>
+               {notas.map(element=><td className="bg-blue-200">
+                 {element.investigacion}
+                </td>)}
 
-                <td className="bg-green-200">
-                  100
-                </td>
+                 {notas.map(element=><td className="bg-green-200">
+                  {element.vinculacion}                  
+                </td>)}
 
-                <td className="bg-yellow-200">
-                  100
-                </td>
+                {notas.map(element=><td className="bg-yellow-200">
+                 {element.trabajo_practico} 
+                </td>)}
 
-                <td className="bg-red-200">
-                  100
-                </td>
-                <td className="bg-blue-200">
-                  100
-                </td>
+                {notas.map(element=><td className="bg-red-200">
+                  {element.evaluacion_final}
+                </td>)}
+                {notas.map(element=><td className="bg-blue-200">
+                  {element.examen}
+                </td>)}
               </tr>
             </tbody>
           </table>
