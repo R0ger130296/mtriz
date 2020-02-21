@@ -44,7 +44,7 @@ let getDatos = (req, res) => {
 };
 
 let postDatos = (req, res) => {
-  let tabla = req.body.tabla;
+  let tabla = req.query.tabla;
   let datos = req.body.datos;
   db(tabla)
     .insert(datos)
@@ -142,7 +142,7 @@ let login = (req,res) =>{
         if(element.correo === correo && element.clave === clave){
           res.status(200).json({
             ok: true,
-            mensaje: "loggeded"
+            mensaje: "found"
           })
         }
       })
