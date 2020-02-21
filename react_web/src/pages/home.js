@@ -111,11 +111,11 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="overflow-x-scroll">
+        <div className="overflow-x-scroll w-full">
           <table className="text-md bg-white shadow-md rounded mb-4">
             <thead className="bg-black text-black w-full">
               <tr className="border-b">
-                <th className="text-center bg-red-200 p-5">ID</th>
+                <th className="text-center bg-red-200 p-5">Alumno</th>
                 <th className="text-center bg-blue-200 py-3">Investigación</th>
                 <th className="text-center bg-green-200 py-3">Vinculación</th>
                 <th className="text-center bg-yellow-200 py-3">
@@ -131,7 +131,7 @@ class Home extends Component {
             <tbody className="">
               <tr>
                 <td className="bg-red-200">
-                 {notas.map(element=><h5 className="ml-5">{element.id}</h5>)}
+                 {notas.map(element=><h5 className="ml-5">{element.nombre}</h5>)}
                 </td>
                {notas.map(element=><td className="bg-blue-200">
                  {element.investigacion}
