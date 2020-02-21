@@ -5,9 +5,10 @@ let db = require("knex")(config[env]);
 let getDatosWhere = (req, res) => {
   let tabla = req.query.tabla;
   let campo = req.query.campo;
-  let where =req.query.where;
+  let where = req.query.where;
   db.select(campo)
-    .from(tabla).where('id_rol',where)
+    .from(tabla)
+    .where("id_rol", where)
     .then(resultado => {
       return res.status(200).json({
         ok: true,
@@ -129,8 +130,8 @@ let getDatosbyID = (req, res) => {
     });
 };
 
-let login = (req,res) =>{
-  let tabla = 'persona';
+let login = (req, res) => {
+  let tabla = "persona";
   let correo = req.body.correo;
   let clave = req.body.clave;
   let campo = req.body.campo;
@@ -139,46 +140,49 @@ let login = (req,res) =>{
     .from(tabla)
     .then(resultado => {
       resultado.forEach(element => {
-        if(element.correo === correo && element.clave === clave){
+        if (element.correo === correo && element.clave === clave) {
           res.status(200).json({
             ok: true,
             mensaje: "found"
-          })
+          });
         }
-      })
+      });
       return res.status(500).json({
-          ok: false,
-          mensaje: 'inc'
-        })
+        ok: false,
+        mensaje: "inc"
+      });
     })
     .catch(error => {
-          return res.status(500).json({
-              ok: false,
-              datas: null
-          })
+      return res.status(500).json({
+        ok: false,
+        datas: null
+      });
+    });
+};
+
+let getDatosAlumno = (req, res) => {
+  // let idmatricula = req.query.idmatricula;
+  db.raw(
+    `select persona.id, persona.nombre as estudiante, persona.identificacion, persona.telf, persona.correo, 
+    matricula.nombre as est_matricula, malla.nombre as est_malla, asistencia.porcentaje from persona join matricula on persona.id = matricula.id_persona
+    join semestre_malla on semestre_malla.id = matricula.id_semestre_malla join malla
+    on malla.id = semestre_malla.id_malla join parcial on matricula.id = parcial.id_matricula
+    join asistencia on asistencia.id = parcial.id_asistencia;`
+  )
+    .then(resultado => {
+      return res.status(200).json({
+        ok: true,
+        datos: resultado.rows
+      });
     })
-
-}
-
-// let getDatosDetalle = (req, res) => {
-//   let idmatricula= req.query.idmatricula
-//   db.raw(`select nota.investigacion, nota.vinculacion, nota.trabajo_practico, nota.evaluacion_final, nota.examen,
-//   persona.nombre, persona.identificacion, persona.telf,persona.correo from nota join parcial on nota.id = parcial.id_nota join matricula on matricula.id = percial.id_matricula
-//   join persona on persona.id = ${idmatricula}`)
-//   .then( resultado => {
-//       return res.status(200).json({
-//           ok: true,
-//           datos: resultado.rows
-//       }) 
-//   })
-//   .catch((error) => {
-//       return res.status(500).json({
-//           ok: false,
-//           datos: null,
-//           mensaje: `Error del servidor: ${error}` 
-//       })
-//   })
-// }
+    .catch(error => {
+      return res.status(500).json({
+        ok: false,
+        datos: null,
+        mensaje: `Error del servidor: ${error}`
+      });
+    });
+};
 module.exports = {
   getDatos,
   postDatos,
@@ -187,5 +191,5 @@ module.exports = {
   getDatosbyID,
   login,
   getDatosWhere,
-  // getDatosDetalle
+  getDatosAlumno
 };
