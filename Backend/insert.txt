@@ -16,7 +16,7 @@ select * from parcial
 
 insert into parcial values(1, 'parcial 1', 1, 1, 1);
 
-insert into nota values(1, '100','100','100','100','100' );
+insert into nota values(1, 100,100,100,100,100);
 
 insert into asistencia values(1,'100%');
 
