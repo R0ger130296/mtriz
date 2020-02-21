@@ -1,7 +1,28 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import axios from 'axios';
+
+const API = "http://localhost:8000/server/all";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        detalles: [],
+    }
+}
+
+componentDidMount() {
+    axios.get(API)
+    .then(response => {
+        this.setState({ detalles: response.data.datos })
+    })
+    .catch(error => {
+        console.log(error)
+    })
+}
+
   render() {
+    const {detalles}=this.state;
     return (
       <div>
         <div className="flex bg-teal-500 p-6 justify-between">
@@ -45,8 +66,8 @@ class Home extends Component {
                 <th className="text-left p-3">Asistencia</th>
               </tr>
               <tr className="border-b hover:bg-orange-100 bg-gray-100">
-                <td className="p-3">1</td>
-                <td className="p-3">Nombre</td>
+                {detalles.map(element=><td className="p-3"key={ element.id}>{element.id}</td>)}
+                {detalles.map(element=><td className="p-3"key={ element.id}>{element.estudiante}</td>)}
                 <td className="p-3">Identificación</td>
                 <td className="p-3">Telefono</td>
                 <td className="p-3">Correo</td>
