@@ -68,12 +68,12 @@ componentDidMount() {
               <tr className="border-b hover:bg-orange-100 bg-gray-100">
                 {detalles.map(element=><td className="p-3"key={ element.id}>{element.id}</td>)}
                 {detalles.map(element=><td className="p-3"key={ element.id}>{element.estudiante}</td>)}
-                <td className="p-3">Identificación</td>
-                <td className="p-3">Telefono</td>
-                <td className="p-3">Correo</td>
-                <td className="p-3">Matrícula</td>
-                <td className="p-3">Malla</td>
-                <td className="p-3">Asistencia</td>
+                {detalles.map(element=><td className="p-3"key={ element.id}>{element.identificacion}</td>)}
+                {detalles.map(element=><td className="p-3"key={ element.id}>{element.telf}</td>)}
+                {detalles.map(element=><td className="p-3"key={ element.id}>{element.correo}</td>)}
+                {detalles.map(element=><td className="p-3"key={ element.id}>{element.est_matricula}</td>)}
+                {detalles.map(element=><td className="p-3"key={ element.id}>{element.est_malla}</td>)}
+                {detalles.map(element=><td className="p-3"key={ element.id}>{element.porcentaje}</td>)}
               </tr>
               <tr className="border-b bg-gray-100">
                 <th className="text-left p-3">Media</th>

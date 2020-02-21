@@ -36,7 +36,7 @@ insert into semestre values (1, 'cuarto', 1);
 
 insert into semestre_malla values (1, 1, 1);
 
-insert into matricula values (1, 'primera', 2, 1, 1)
+insert into matricula values (1, 'primera', 2, 1, 1);
 
 insert into persona values(2,'alumno','1723603997','0990475612','alumno@gmail.com','12345',2);
 
